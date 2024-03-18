@@ -1,0 +1,68 @@
+<!-- app-home.component.html -->
+
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+  <div class="row mb-2">
+    <div class="col">
+      <label class="form-label">Check-in date:</label>
+      <input class="form-control" type="date" formControlName="checkInDate" />
+      <small
+        class="text-danger"
+        *ngIf="
+          reservationForm.get('checkInDate')?.invalid &&
+          reservationForm.get('checkInDate')?.touched
+        "
+      >
+        Check-in date is required
+      </small>
+    </div>
+    <div class="col">
+      <label class="form-label">Check-out date:</label>
+      <input class="form-control" type="date" formControlName="checkOutDate" />
+      <small
+        class="text-danger"
+        *ngIf="
+          reservationForm.get('checkOutDate')?.invalid &&
+          reservationForm.get('checkOutDate')?.touched
+        "
+      >
+        Check-out date is required
+      </small>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col">
+      <label class="form-label">Guest Name:</label>
+      <input class="form-control" type="text" formControlName="guestName" />
+      <small
+        class="text-danger"
+        *ngIf="
+          reservationForm.get('guestName')?.invalid &&
+          reservationForm.get('guestName')?.touched
+        "
+      >
+        A name is required
+      </small>
+    </div>
+    <div class="col">
+      <label class="form-label">Guest Email:</label>
+      <input class="form-control" type="email" formControlName="guestEmail" />
+      <small
+        class="text-danger"
+        *ngIf="
+          reservationForm.get('guestEmail')?.invalid &&
+          reservationForm.get('guestEmail')?.touched
+        "
+      >
+        An email is required
+      </small>
+    </div>
+  </div>
+
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="!reservationForm.valid"
+  >
+    Submit
+  </button>
+</form>
