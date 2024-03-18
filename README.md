@@ -3,7 +3,7 @@
 
 this project is an Hotel App created with angular, basically you can add a new reservation to the list by clicking the "create" button, and view all reservation by clicking the other button, you can also edit a specific reservation or delete it
 
-##link to the project: https://hotelapp-9c466.web.app/list
+## Link to the project: https://hotelapp-9c466.web.app/list
 
 
 ## This project wass created using angular and bootstrap for styling
